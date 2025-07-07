@@ -17,14 +17,12 @@ const { StorageBrowser } = createStorageBrowser({
 function App() {
   return (
     <Authenticator>
-      {({ signOut, user }) => (
+      {({ signOut }) => (
         <>
           <div className="header">
             <Button onClick={signOut}>Sign out</Button>
           </div>
-          <StorageBrowser
-            path="public/"
-          />
+          <StorageBrowser />
         </>
       )}
     </Authenticator>

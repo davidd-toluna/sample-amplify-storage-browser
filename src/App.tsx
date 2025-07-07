@@ -20,10 +20,11 @@ function App() {
       {({ signOut, user }) => (
         <>
           <div className="header">
-            <h1>{`Hello ${user?.username}`}</h1>
             <Button onClick={signOut}>Sign out</Button>
           </div>
-          <StorageBrowser />
+          <StorageBrowser
+            path="public/"
+          />
         </>
       )}
     </Authenticator>

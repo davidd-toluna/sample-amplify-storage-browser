@@ -2,18 +2,27 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  min-height: 100vh;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 188, 212, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.05);
 }
 
 .header-left {
   display: flex;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .header-right {
@@ -23,16 +32,67 @@
 }
 
 .company-logo {
-  height: 40px;
+  height: 60px;
   width: auto;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 188, 212, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: scale(1.05);
+}
+
+.admin-badge {
+  background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 188, 212, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Add subtle Toluna brand colors to Storage Browser */
+:root {
+  --toluna-primary: #00bcd4;
+  --toluna-secondary: #e91e63;
+  --toluna-accent: #0097a7;
+}
+
+/* Style the Storage Browser with brand colors */
+[data-amplify-storage-browser] {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 188, 212, 0.1);
+  border: 1px solid rgba(0, 188, 212, 0.1);
+}
+
+/* Add subtle brand accent to buttons and links */
+button[data-amplify-button="primary"] {
+  background: linear-gradient(135deg, var(--toluna-primary) 0%, var(--toluna-accent) 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2) !important;
+}
+
+button[data-amplify-button="primary"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 188, 212, 0.3) !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .header-left {
+    justify-content: center;
+    gap: 1rem;
   }
   
   .header-right {
@@ -40,6 +100,22 @@
   }
   
   .company-logo {
-    height: 32px;
+    height: 50px;
+  }
+  
+  .admin-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .company-logo {
+    height: 45px;
   }
 }

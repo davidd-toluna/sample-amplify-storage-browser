@@ -39,14 +39,16 @@ function App() {
         <>
           <div className="header">
             <div className="header-left">
-              {userRole === 'admin' && <span>Admin Mode</span>}
-            </div>
-            <div className="header-right">
               <img
                 src={tolunaLogo}
                 alt="Toluna Logo"
                 className="company-logo"
               />
+              {userRole === 'admin' && (
+                <span className="admin-badge">Admin Mode</span>
+              )}
+            </div>
+            <div className="header-right">
               <Button onClick={signOut}>Sign out</Button>
             </div>
           </div>

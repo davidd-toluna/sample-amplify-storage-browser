@@ -37,8 +37,17 @@ function App() {
       {({ signOut }) => (
         <>
           <div className="header">
-            {userRole === 'admin' && <span>Admin Mode</span>}
-            <Button onClick={signOut}>Sign out</Button>
+            <div className="header-left">
+              {userRole === 'admin' && <span>Admin Mode</span>}
+            </div>
+            <div className="header-right">
+              <img
+                src="/toluna-logo.png"
+                alt="Toluna Logo"
+                className="company-logo"
+              />
+              <Button onClick={signOut}>Sign out</Button>
+            </div>
           </div>
           <StorageBrowser />
         </>

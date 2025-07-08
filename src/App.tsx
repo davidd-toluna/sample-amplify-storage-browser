@@ -10,6 +10,7 @@ import { Amplify } from 'aws-amplify';
 import { Authenticator, Button } from '@aws-amplify/ui-react';
 import { fetchUserAttributes } from 'aws-amplify/auth';
 import { useEffect, useState } from 'react';
+import tolunaLogo from './assets/toluna-logo.png';
 
 Amplify.configure(config);
 
@@ -42,7 +43,7 @@ function App() {
             </div>
             <div className="header-right">
               <img
-                src="/toluna-logo.png"
+                src={tolunaLogo}
                 alt="Toluna Logo"
                 className="company-logo"
               />

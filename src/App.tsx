@@ -16,7 +16,7 @@ Amplify.configure(config);
 
 const defaultValue = {
   location: {
-    bucket: "myStorage",
+    bucket: "amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw",
     prefix: "",
     path: "file/",
     permissions: ["get", "list", "write"] as ("get" | "list" | "write" | "delete")[]

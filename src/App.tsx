@@ -34,8 +34,8 @@ function App() {
   }, []);
 
   return (
-    <Authenticator>
-      {({ signOut }) => (
+<Authenticator hideSignUp={true}>
+  {({ signOut }) => (
         <>
           <div className="header">
             <div className="header-left">

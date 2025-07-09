@@ -82,6 +82,39 @@ button[data-amplify-button="primary"]:hover {
   box-shadow: 0 6px 16px rgba(0, 188, 212, 0.3) !important;
 }
 
+/* Hide the original bucket name text and replace with "SDKs" */
+[data-amplify-storage-browser] td:nth-child(2):contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw") {
+  font-size: 0 !important;
+}
+
+[data-amplify-storage-browser] td:nth-child(2):contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw")::before {
+  content: "SDKs";
+  font-size: 14px;
+  color: inherit;
+}
+
+/* Also handle it in the breadcrumb navigation */
+[data-amplify-storage-browser] nav a:contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw") {
+  font-size: 0 !important;
+}
+
+[data-amplify-storage-browser] nav a:contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw")::before {
+  content: "SDKs";
+  font-size: 14px;
+  color: inherit;
+}
+
+/* Alternative approach - target the bucket column and replace all text */
+[data-amplify-storage-browser] td:nth-child(2) {
+  font-size: 0 !important;
+}
+
+[data-amplify-storage-browser] td:nth-child(2)::before {
+  content: "SDKs";
+  font-size: 14px;
+  color: inherit;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .header {

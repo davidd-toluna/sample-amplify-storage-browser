@@ -16,8 +16,6 @@ Amplify.configure(config);
 
 const { StorageBrowser } = createStorageBrowser({
   config: createAmplifyAuthAdapter(),
-  level: undefined,
-  path: 'files/',
 });
 
 function App() {

@@ -14,6 +14,15 @@ import tolunaLogo from './assets/toluna-logo.png';
 
 Amplify.configure(config);
 
+const defaultValue = {
+  location: {
+    bucket: "myStorage",
+    prefix: "",
+    path: "file/",
+    permissions: ["get", "list", "write"] as ("get" | "list" | "write" | "delete")[]
+  }
+};
+
 const { StorageBrowser } = createStorageBrowser({
   config: createAmplifyAuthAdapter(),
 });
@@ -52,7 +61,7 @@ function App() {
               <Button onClick={signOut}>Sign out</Button>
             </div>
           </div>
-          <StorageBrowser />
+          <StorageBrowser defaultValue={defaultValue}/>
         </>
       )}
     </Authenticator>

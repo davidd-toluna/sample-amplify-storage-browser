@@ -82,34 +82,36 @@ button[data-amplify-button="primary"]:hover {
   box-shadow: 0 6px 16px rgba(0, 188, 212, 0.3) !important;
 }
 
-/* Hide the original bucket name text and replace with "SDKs" */
-[data-amplify-storage-browser] td:nth-child(2):contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw") {
+/* Remove the old CSS that doesn't work and replace with this: */
+
+/* Hide bucket name in table cells and replace with "SDKs" */
+[data-amplify-storage-browser] .amplify-storage-browser__table-text-data-cell-text {
   font-size: 0 !important;
 }
 
-[data-amplify-storage-browser] td:nth-child(2):contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw")::before {
+[data-amplify-storage-browser] .amplify-storage-browser__table-text-data-cell-text::before {
   content: "SDKs";
   font-size: 14px;
   color: inherit;
 }
 
-/* Also handle it in the breadcrumb navigation */
-[data-amplify-storage-browser] nav a:contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw") {
+/* Hide bucket name in breadcrumbs and replace with "SDKs" */
+[data-amplify-storage-browser] .amplify-breadcrumbs__link--current {
   font-size: 0 !important;
 }
 
-[data-amplify-storage-browser] nav a:contains("amplify-d16psume6rokrn-mai-mystoragebucketd73bc5f9-v8kjevina0dw")::before {
-  content: "SDKs";
+[data-amplify-storage-browser] .amplify-breadcrumbs__link--current::before {
+  content: "SDKs/files";
   font-size: 14px;
   color: inherit;
 }
 
-/* Alternative approach - target the bucket column and replace all text */
-[data-amplify-storage-browser] td:nth-child(2) {
+/* Also target regular breadcrumb links */
+[data-amplify-storage-browser] .amplify-breadcrumbs__link {
   font-size: 0 !important;
 }
 
-[data-amplify-storage-browser] td:nth-child(2)::before {
+[data-amplify-storage-browser] .amplify-breadcrumbs__link::before {
   content: "SDKs";
   font-size: 14px;
   color: inherit;
